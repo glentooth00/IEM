@@ -1,0 +1,12 @@
+{
+    "name": "ilecoiii/iem",
+    "description": "for monitoring IT equipment",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ilecoiii\\Iem\\": "app/"
+        }
+    },
+    "require": {}
+}
