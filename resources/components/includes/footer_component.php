@@ -1,5 +1,8 @@
 
-<?php include_once 'resources/components/footer/footer_div.php'; ?>
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2026 My Dashboard. All rights reserved.
+    </footer>
 
 </body>
 </html>
