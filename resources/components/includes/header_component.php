@@ -11,13 +11,15 @@
 
     <!----CUSTOM CSS ------>
     <link rel="stylesheet" type="text/css"  href="public/assets/css/behaviors.css">
-    <link rel="stylesheet" type="text/css"  href="../../public/assets/css/sidebar.css">
-    <link rel="stylesheet" type="text/css"  href="../../public/assets/css/behaviors.css">
+    <!-- <link rel="stylesheet" type="text/css"  href="../../public/assets/css/sidebar.css"> -->
+    <link rel="stylesheet" type="text/css"  href="../../public/assets/css/style.css">
+    <!-- <link rel="stylesheet" type="text/css"  href="../../public/assets/css/behaviors.css"> -->
     
     <!-- JQUERY ---->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     
-
+    <!--------BOOTSTRAP FONTS --------->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
     <script>
             $(document).ready(function(){
                 $('#themeButton').on('click', function() {
@@ -54,5 +56,7 @@
 
 </head>
 <body>
+
+
 
     
