@@ -1,8 +1,11 @@
         <div class="main-content">
-
-            <h1 class="title">Welcome to the Dashboard</h1>
-            <hr class="has-background-grey-dark mt-0">
-            <p class="subtitle">Your main content goes here.</p>
+            <section class="hero mb-3">
+                <h1 class="title">Welcome to the Dashboard</h1>
+                <hr class="has-background-grey-dark mt-0">  
+                <p class="subtitle mb-3">Your main content goes here.</p>
+            </section>
+            
+           
 
             <div class="columns is-multiline">
                 <div class="column is-4">
