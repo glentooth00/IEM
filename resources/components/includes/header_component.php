@@ -57,6 +57,30 @@
 </head>
 <body>
 
+<!-- Mobile Navbar -->
+<nav class="mobile-nav is-hidden-tablet">
+  <div class="mobile-nav-header">
+    <span class="has-text-weight-bold">Dashboard</span>
+
+    <button class="burger-btn" id="burgerBtn">
+      ☰
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Slide Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.php">Home</a>
+  <a href="#">Profile</a>
+  <a href="#">Messages</a>
+  <a href="users.php">Users</a>
+  <a href="#">Settings</a>
+  <a href="#" class="has-text-danger">Logout</a>
+</div>
+
+<!-- Dark overlay -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
 
 
     
