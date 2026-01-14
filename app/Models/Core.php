@@ -18,9 +18,25 @@ class Core {
 
     }
 
-    public function store($table, $data){
+    public function store(array $data, $table){
 
-        
+        $columns = array_keys($data);
+
+        $placeholders = array_map(fn($col) => ':' .  $col, $columns);
+
+        $i = implode(', ', $columns);
+
+        $e = implode(', ', $placeholders);
+
+        $sql = "INSERT INTO {$table} ({$i}) VALUES  ({$e})";
+
+        $stmt= $this->db->prepare($sql);
+
+        foreach ($data as $key => $value) {
+            $stmt->bindValue(':' . $key, $value);
+        }
+
+        return $stmt->execute();
 
     }
 

@@ -10,12 +10,12 @@
 
                     <!-- Modal Body -->
                     <div class="modalBody">
-                        <form action="" method="post" enctype="multipart/form-data" class="userForm">
+                        <form action="functions/create_users.php" method="post" enctype="multipart/form-data" class="userForm">
                             <!--- User photo --->
                         <div class="userPhoto mb-3 mt-2 is-flex is-justify-content-left mb-1">
                             <div id="file-js-example" class="file has-name">
                             <label class="file-label">
-                                <input class="file-input" type="file" name="resume" />
+                                <input class="file-input" type="file" name="user_image" />
                                 <span class="file-cta">
                                 <span class="file-icon">
                                     <i class="fas fa-upload"></i>
@@ -35,11 +35,11 @@
                                 </div>
                                 <div class="column">
                                     <label class="label">Middlename</label>
-                                    <input class="input" type="text" name="Middlename" placeholder="Middlename" required />
+                                    <input class="input" type="text" name="middlename" placeholder="Middlename" required />
                                 </div>
                                 <div class="column">
                                     <label class="label">Lastname</label>
-                                    <input class="input" type="text" name="Lastname" placeholder="Lastname" required />
+                                    <input class="input" type="text" name="lastname" placeholder="Lastname" required />
                                 </div>
                             </div>
                         </div>
@@ -48,23 +48,24 @@
                             <div class="columns">
                                 <div class="column">
                                     <label class="label">Username</label>
-                                    <input class="input" type="text" name="Username" placeholder="Username" required />
+                                    <input class="input" type="text" name="username" placeholder="Username" required />
                                 </div>
                                 <div class="column">
                                     <label class="label">Password</label>
-                                    <input class="input" id="passwordInput" type="password" name="Password" placeholder="Password" required />
+                                    <input class="input" id="passwordInput" type="password" name="password" placeholder="Password" required />
                                     <span class="eye" id="toggleCheck"><i class="bi bi-eye"></i></span>
                                 </div>
                             </div>
                         </div>
                         
 
-                        </form>
+                        
                     </div>
                     <!-- Modal Footer -->
                     <div class="modalFooter">
                         <button class="button is-light" id="cancelModal" type="button">Cancel</button>
-                        <button class="button is-primary">Save</button>
+                        <button class="button is-primary" type="submit">Save</button>
+                    </form>
                     </div>
                 </div>
             </div>
