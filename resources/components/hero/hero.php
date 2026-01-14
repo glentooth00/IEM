@@ -5,14 +5,16 @@
         case 'Users': ?>
             <h1 class="title mb-0">Users</h1>
             <small class="mb-1 has-text-grey">Manage users</small>
-            <hr class="has-background-grey-dark mt-2">  
-            <p class="subtitle">Your main content goes here.</p>
+            <hr class="has-background-grey-dark mt-2 mb-0">  
+            <!-- <p class="subtitle">Your main content goes here.</p> -->
+             <?php include_once __DIR__ .  '../../main/users_content.php'; ?>
+             
     <?php break;
         case 'Dashboard': ?>
             <h1 class="title mb-0">Dashboard</h1>
             <small class="mb-1 has-text-grey">Main page</small>
-            <hr class="has-background-grey-dark mt-2"> 
-            <p class="subtitle">Your main content goes here.</p>
+            <hr class="has-background-grey-dark mt-2 mb-0"> 
+            <!-- <p class="subtitle">Your main content goes here.</p> -->
     <?php break;
 
         default: ?>

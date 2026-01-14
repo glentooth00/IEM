@@ -16,3 +16,5 @@ include_once __DIR__ . '/../components/includes/header_component.php';
 </div>
 
 <?php include_once __DIR__ . '/../components/includes/footer_component.php'; ?>
+
+            
