@@ -12,8 +12,8 @@
                     <div class="modalBody">
                         <form action="" method="post" enctype="multipart/form-data" class="userForm">
                             <!--- User photo --->
-                        <div class="userPhoto mb-3 mt-2 is-flex is-justify-content-left">
-                           <div id="file-js-example" class="file has-name">
+                        <div class="userPhoto mb-3 mt-2 is-flex is-justify-content-left mb-1">
+                            <div id="file-js-example" class="file has-name">
                             <label class="file-label">
                                 <input class="file-input" type="file" name="resume" />
                                 <span class="file-cta">
@@ -27,86 +27,38 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="columns">
-                            <div class="column is-col-min-1">
-                                <label class="label">Firstname</label>
-                                <div class="control">
-                                    <input class="input" type="text" placeholder="Firstname">
-                                </div>
-                            </div>
-                            <div class="column is-col-min-1">
-                                <label class="label">Middlename</label>
-                                <div class="control">
-                                    <input class="input" type="text" placeholder="Middlename">
-                                </div>
-                            </div>
-                             <div class="column is-col-min-1">
-                                <label class="label">Lastname</label>
-                                <div class="control">
-                                    <input class="input" type="text" placeholder="Lastname">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="columns">
-                            <div class="column is-col-min-1">
-                                <label class="label">Username</label>
-                                <div class="control">
-                                    <input class="input" type="text" placeholder="username">
-                                </div>
-                            </div>
-                    <div class="column is-col-min-1">
-                        <label class="label">Password</label>
-
-                        <div class="control has-icons-right">
-                            <input
-                                id="password"
-                                class="input"
-                                type="password"
-                                placeholder="Password"
-                            >
-
-                            <span
-                                class="icon is-right password-toggle"
-                                id="togglePassword"
-                            >
-                                <i class="bi bi-eye"></i>
-                            </span>
-                        </div>
-                    </div>
-
-
-
-
-
-                        </div>
-                        <!--- name details --->
-                        <!-- <div class="columns mt-2">
-                            <div class="column is-4">
-                                <div class="field">
+                        <div class="mt-4">
+                            <div class="columns">
+                                <div class="column">
                                     <label class="label">Firstname</label>
-                                    <div class="control">
-                                        <input class="input" type="text" placeholder="firstname">
-                                    </div>
+                                    <input class="input" type="text" name="firstname" placeholder="Firstname" required />
                                 </div>
-                            </div>
-                            <div class="column is-4">
-                                <div class="field">
+                                <div class="column">
                                     <label class="label">Middlename</label>
-                                    <div class="control">
-                                        <input class="input" type="text" placeholder="middlename">
-                                    </div>
+                                    <input class="input" type="text" name="Middlename" placeholder="Middlename" required />
                                 </div>
-                            </div>
-                            <div class="column is-4">
-                                <div class="field">
+                                <div class="column">
                                     <label class="label">Lastname</label>
-                                    <div class="control">
-                                        <input class="input" type="text" placeholder="lastname">
-                                    </div>
+                                    <input class="input" type="text" name="Lastname" placeholder="Lastname" required />
                                 </div>
                             </div>
-                        </div> -->
-    
+                        </div>
+                        <hr>
+                        <div class="mt-4">
+                            <div class="columns">
+                                <div class="column">
+                                    <label class="label">Username</label>
+                                    <input class="input" type="text" name="Username" placeholder="Username" required />
+                                </div>
+                                <div class="column">
+                                    <label class="label">Password</label>
+                                    <input class="input" id="passwordInput" type="password" name="Password" placeholder="Password" required />
+                                    <span class="eye" id="toggleCheck"><i class="bi bi-eye"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+
                         </form>
                     </div>
                     <!-- Modal Footer -->
@@ -117,24 +69,35 @@
                 </div>
             </div>
 
-<script>
-document.getElementById('togglePassword').addEventListener('click', function () {
-    const password = document.getElementById('password');
-    const icon = this.querySelector('i');
-
-    if (password.type === 'password') {
-        password.type = 'text';
-        icon.classList.replace('bi-eye', 'bi-eye-slash');
-    } else {
-        password.type = 'password';
-        icon.classList.replace('bi-eye-slash', 'bi-eye');
-    }
-});
-</script>
 
 <style>
-#togglePassword::hover {
-    cursor: pointer;
-}
+
 </style>
 
+<script>
+    // Toggle password visibility
+    document.getElementById('toggleCheck').addEventListener('click', function() {
+        var passwordInput = document.getElementById('passwordInput');
+        var icon = this.querySelector('i');
+
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            icon.classList.remove('bi-eye');
+            icon.classList.add('bi-eye-slash');
+        } else {
+            passwordInput.type = 'password';
+            icon.classList.remove('bi-eye-slash');
+            icon.classList.add('bi-eye');
+        }
+    });
+</script>
+
+<script>
+  const fileInput = document.querySelector("#file-js-example input[type=file]");
+  fileInput.onchange = () => {
+    if (fileInput.files.length > 0) {
+      const fileName = document.querySelector("#file-js-example .file-name");
+      fileName.textContent = fileInput.files[0].name;
+    }
+  };
+</script>

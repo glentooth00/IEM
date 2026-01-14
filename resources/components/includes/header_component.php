@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css"  href="../../public/assets/css/behaviors.css">
     <link rel="stylesheet" type="text/css"  href="../../public/assets/css/modal_style.css">
     <link rel="stylesheet" type="text/css"  href="../../public/assets/css/images.css">
+    <link rel="stylesheet" type="text/css"  href="../../public/assets/css/password_style.css">
     
     <!-- JQUERY ---->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
