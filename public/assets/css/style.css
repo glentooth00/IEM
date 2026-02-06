@@ -60,14 +60,15 @@ html, body {
   }
     .navbar-menu {
     background-color: #363636;
+    color:white;
   }
 
   .navbar-item {
-    color: white;
+    color: white !important;
   }
 
   .navbar-item:hover {
-    background-color: #4a4a4a;
+    background-color: #000000;
   }
 }
 
