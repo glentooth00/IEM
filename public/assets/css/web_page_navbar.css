@@ -1,0 +1,9 @@
+.navbar{
+    background-color: rgb(14, 34, 184);
+}
+.navbar .navbar-menu .navbar-end a{
+    color: white;
+}
+.navbar .navbar-menu .navbar-end a:hover{
+    color: rgb(31, 29, 29);
+}
