@@ -12,6 +12,19 @@
             background-color: #f0f8ff;
         }
 
+        /* Align items right */
+        .navbar-end {
+            margin-left: auto;
+            font-size: 15px;
+            padding: 1px;
+            align-items: anchor-center;
+            float: inline-end;
+        }
+
+        .navbar-item {
+            white-space: nowrap;
+        }
+
         .navbar {
             background-color: #0c36a7f2;
         }
@@ -206,6 +219,8 @@
             opacity: 1;
         }
 
+
+
         .slider-wrapper {
             position: relative;
             overflow: hidden;
@@ -281,27 +296,30 @@
 
 <body>
 
-    <!-- Navigation -->
     <nav class="navbar is-spaced" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item logo-area" href="#">
-                <img src="public/assets/images/nisu.png" alt="Northern Iloilo State University Logo" class="logo-img">
-
-                <span class="logo-text">
-                    Northern Iloilo State University
-                </span>
+                <img src="public/assets/images/nisu.png" alt="Logo" class="logo-img">
+                <span class="logo-text">Northern Iloilo State University</span>
+            </a>
+            <!-- Hamburger for mobile -->
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </a>
         </div>
 
-
-        <div class="navbar-menu">
+        <div id="navMenu" class="navbar-menu">
             <div class="navbar-end">
                 <a class="navbar-item">Home</a>
                 <a class="navbar-item">About</a>
-                <a class="navbar-item">Admissions</a>
-                <a class="navbar-item">News</a>
-                <a class="navbar-item">Events</a>
-                <a class="navbar-item">Contact</a>
+                <a class="navbar-item">Administration</a>
+                <a class="navbar-item">Academics</a>
+                <a class="navbar-item">Research and Extension</a>
+                <a class="navbar-item">External Campuses</a>
+                <a class="navbar-item">International Collaborations</a>
+                <a class="navbar-item">Legal Affairs Office</a>
             </div>
         </div>
     </nav>
@@ -319,35 +337,116 @@
     <!-- Slider Section -->
     <section class="section fade-in">
         <div class="container">
-            <h3 class="title is-4 has-text-centered">Campus Highlights</h3>
+            <h3 class="title is-4 has-text-weight-semibold mb-4" style="color:#2c3e50;">Campus Highlights</h3>
 
-            <div class="slider-wrapper" style="position: relative; overflow: hidden;">
+            <div class="slider-wrapper">
                 <!-- Slider -->
-                <div class="slider" id="autoSlider" style="display: flex; transition: transform 0.5s ease;">
-                    <div class="slide" style="min-width: 100%;"><img
+                <div class="slider" id="autoSlider">
+                    <div class="slide"><img
                             src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80"
-                            style="width:100%; height:400px; object-fit:cover;"></div>
-                    <div class="slide" style="min-width: 100%;"><img
+                            alt="Campus view 1"></div>
+                    <div class="slide"><img
                             src="https://images.unsplash.com/photo-1579370318445-66f146e51e82?auto=format&fit=crop&w=1200&q=80"
-                            style="width:100%; height:400px; object-fit:cover;"></div>
-                    <div class="slide" style="min-width: 100%;"><img
+                            alt="Campus view 2"></div>
+                    <div class="slide"><img
                             src="https://images.unsplash.com/photo-1581091215368-3f3d10ab1c86?auto=format&fit=crop&w=1200&q=80"
-                            style="width:100%; height:400px; object-fit:cover;"></div>
+                            alt="Campus view 3"></div>
                 </div>
 
                 <!-- Arrows -->
-                <button id="prevSlide" class="slider-arrow left"
-                    style="position:absolute; top:50%; left:10px; transform:translateY(-50%); z-index:10; background:rgba(0,0,0,0.5); color:white; border:none; padding:0.5rem 1rem; cursor:pointer;">&#10094;</button>
-                <button id="nextSlide" class="slider-arrow right"
-                    style="position:absolute; top:50%; right:10px; transform:translateY(-50%); z-index:10; background:rgba(0,0,0,0.5); color:white; border:none; padding:0.5rem 1rem; cursor:pointer;">&#10095;</button>
+                <button id="prevSlide" class="slider-arrow left">&#10094;</button>
+                <button id="nextSlide" class="slider-arrow right">&#10095;</button>
 
                 <!-- Dot Indicators -->
-                <div id="sliderDots"
-                    style="position:absolute; bottom:15px; left:50%; transform:translateX(-50%); display:flex; gap:8px;">
-                </div>
+                <div id="sliderDots" class="slider-dots"></div>
             </div>
         </div>
     </section>
+
+    <style>
+        /* Slider Wrapper */
+        .slider-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Slider */
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Arrows */
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background: rgba(44, 62, 80, 0.6);
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 1.5rem;
+            transition: background 0.3s ease;
+        }
+
+        .slider-arrow:hover {
+            background: rgba(44, 62, 80, 0.9);
+        }
+
+        .slider-arrow.left {
+            left: 10px;
+        }
+
+        .slider-arrow.right {
+            right: 10px;
+        }
+
+        /* Dot Indicators */
+        .slider-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .slider-dots button {
+            width: 10px;
+            height: 10px;
+            background: rgba(44, 62, 80, 0.4);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .slider-dots button.active {
+            background: #2c3e50;
+        }
+
+        /* Section title */
+        h3.title {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+    </style>
+
 
 
 
@@ -603,6 +702,19 @@
 
         slider.addEventListener("touchend", () => {
             isDragging = false;
+        });
+    });
+</script>
+
+<script>
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', () => {
+        const burger = document.querySelector('.navbar-burger');
+        const menu = document.getElementById(burger.dataset.target);
+
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('is-active');
+            menu.classList.toggle('is-active');
         });
     });
 </script>
