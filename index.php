@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>University Portal</title>
+    <title>NISU Portal</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <style>
         /* Color Theme */
@@ -22,7 +22,7 @@
 
         /* Hero */
         .hero {
-            min-height: 90vh;
+            min-height: 70vh;
             display: flex;
             align-items: center;
         }
@@ -130,26 +130,151 @@
             height: 100%;
         }
 
-        /* Logo area */
+        /* Logo layout */
         .logo-area {
             display: flex;
             align-items: center;
             gap: 0.75rem;
         }
 
-        .logo-area img {
-            /* height: 80px; */
-            width: auto;
+        /* Logo image */
+        .logo-img {
+            width: 48px;
+            height: auto;
         }
 
+        /* University name typography */
         .logo-text {
-            color: white;
-            font-size: 1.1rem;
+            color: #ffffff;
+            font-family: "Georgia", "Times New Roman", serif;
+            /* academic feel */
+            font-size: 1.15rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
             white-space: nowrap;
         }
 
+
         .navbar-item img {
             max-height: 2.7rem;
+        }
+
+        @media screen and (min-width: 769px),
+        print {
+
+            .column.is-6,
+            .column.is-6-tablet {
+                width: auto;
+            }
+        }
+
+        /* Floating navbar shadow on scroll */
+        .navbar.is-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+        .navbar.is-floating {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            background-color: rgba(12, 54, 167, 0.95);
+        }
+
+        /* Section fade-in animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.7s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Fade in from top when scrolling up */
+        .fade-in.up {
+            transform: translateY(-50px);
+        }
+
+        .fade-in.up.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .slider-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.8s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            flex-shrink: 0;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+            border-radius: 8px;
+        }
+
+        /* Arrows */
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(12, 54, 167, 0.7);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .slider-arrow.left {
+            left: 10px;
+        }
+
+        .slider-arrow.right {
+            right: 10px;
+        }
+
+        /* Dot Indicators */
+        .slider-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .slider-dots .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+
+        .slider-dots .dot.active {
+            background-color: #0c36a7;
         }
     </style>
 </head>
@@ -160,12 +285,14 @@
     <nav class="navbar is-spaced" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item logo-area" href="#">
-                <img src="public/assets/images/nisu.png" alt="Global University Logo" style="width:45px;height:90px;">
+                <img src="public/assets/images/nisu.png" alt="Northern Iloilo State University Logo" class="logo-img">
+
                 <span class="logo-text">
-                    <strong>Global University</strong>
+                    Northern Iloilo State University
                 </span>
             </a>
         </div>
+
 
         <div class="navbar-menu">
             <div class="navbar-end">
@@ -180,17 +307,53 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero hero-bg">
+    <section class="hero hero-bg ">
         <div class="hero-body">
-            <div class="container has-text-centered">
+            <div class="container has-text-centered fade-in">
                 <h1 class="title">Welcome to Global University</h1>
                 <h2 class="subtitle">Empowering education, research, and innovation</h2>
             </div>
         </div>
     </section>
 
+    <!-- Slider Section -->
+    <section class="section fade-in">
+        <div class="container">
+            <h3 class="title is-4 has-text-centered">Campus Highlights</h3>
+
+            <div class="slider-wrapper" style="position: relative; overflow: hidden;">
+                <!-- Slider -->
+                <div class="slider" id="autoSlider" style="display: flex; transition: transform 0.5s ease;">
+                    <div class="slide" style="min-width: 100%;"><img
+                            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80"
+                            style="width:100%; height:400px; object-fit:cover;"></div>
+                    <div class="slide" style="min-width: 100%;"><img
+                            src="https://images.unsplash.com/photo-1579370318445-66f146e51e82?auto=format&fit=crop&w=1200&q=80"
+                            style="width:100%; height:400px; object-fit:cover;"></div>
+                    <div class="slide" style="min-width: 100%;"><img
+                            src="https://images.unsplash.com/photo-1581091215368-3f3d10ab1c86?auto=format&fit=crop&w=1200&q=80"
+                            style="width:100%; height:400px; object-fit:cover;"></div>
+                </div>
+
+                <!-- Arrows -->
+                <button id="prevSlide" class="slider-arrow left"
+                    style="position:absolute; top:50%; left:10px; transform:translateY(-50%); z-index:10; background:rgba(0,0,0,0.5); color:white; border:none; padding:0.5rem 1rem; cursor:pointer;">&#10094;</button>
+                <button id="nextSlide" class="slider-arrow right"
+                    style="position:absolute; top:50%; right:10px; transform:translateY(-50%); z-index:10; background:rgba(0,0,0,0.5); color:white; border:none; padding:0.5rem 1rem; cursor:pointer;">&#10095;</button>
+
+                <!-- Dot Indicators -->
+                <div id="sliderDots"
+                    style="position:absolute; bottom:15px; left:50%; transform:translateX(-50%); display:flex; gap:8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
     <!-- News Section -->
-    <section class="section">
+    <section class="section fade-in">
         <div class="container">
             <h3 class="title is-4">Latest News</h3>
             <div class="news-slider-wrapper">
@@ -260,7 +423,7 @@
     </section>
 
     <!-- Events Section -->
-    <section class="section has-background-light">
+    <section class="section has-background-light fade-in">
         <div class="container">
             <h3 class="title is-4">Upcoming Events</h3>
             <div class="columns events-columns">
@@ -281,16 +444,17 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
     <!-- Admissions Section -->
-    <section class="section">
+    <section class="section fade-in">
         <div class="container">
             <h3 class="title is-4">Admissions & Enrolment</h3>
             <div class="columns">
                 <div class="column is-4">
-                    <div class="box has-text-centered">
+                    <div class="has-text-centered">
                         <p>Applications for the 2026 academic year are now open.</p>
                         <ul class="mb-4">
                             <li>Undergraduate Programs</li>
@@ -305,7 +469,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer" style="background-color: #e0f0ff;">
+    <footer class="footer fade-in" style="background-color: #e0f0ff;">
         <div class="content has-text-centered">
             <p>
                 <strong>Global University</strong> © 2026. All rights reserved.<br>
@@ -317,3 +481,128 @@
 </body>
 
 </html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll(".fade-in");
+        const navbar = document.querySelector(".navbar");
+        let lastScrollTop = 0;
+
+        window.addEventListener("scroll", function () {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            // Navbar floating effect
+            if (scrollTop > 50) {
+                navbar.classList.add("is-floating");
+            } else {
+                navbar.classList.remove("is-floating");
+            }
+
+            // Scroll direction detection
+            const scrollingDown = scrollTop > lastScrollTop;
+            sections.forEach((section) => {
+                const rect = section.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+
+                if (rect.top < windowHeight - 100) {
+                    if (scrollingDown) {
+                        section.classList.remove("up");
+                    } else {
+                        section.classList.add("up");
+                    }
+                    section.classList.add("visible");
+                }
+            });
+
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+        });
+    });
+</script>
+
+<!-- Slider JS -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const slider = document.getElementById("autoSlider");
+        const slides = slider.children;
+        const prevBtn = document.getElementById("prevSlide");
+        const nextBtn = document.getElementById("nextSlide");
+        const dotsContainer = document.getElementById("sliderDots");
+        let index = 0;
+        let interval;
+
+        // Create dots
+        for (let i = 0; i < slides.length; i++) {
+            const dot = document.createElement("div");
+            dot.style.width = "12px";
+            dot.style.height = "12px";
+            dot.style.borderRadius = "50%";
+            dot.style.background = i === 0 ? "#0c36a7" : "#ccc";
+            dot.style.cursor = "pointer";
+            dot.addEventListener("click", () => {
+                index = i;
+                updateSlider();
+                resetInterval();
+            });
+            dotsContainer.appendChild(dot);
+        }
+        const dots = dotsContainer.children;
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${index * 100}%)`;
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].style.background = i === index ? "#0c36a7" : "#ccc";
+            }
+        }
+
+        function nextSlide() {
+            index = (index + 1) % slides.length;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            index = (index - 1 + slides.length) % slides.length;
+            updateSlider();
+        }
+
+        prevBtn.addEventListener("click", () => {
+            prevSlide();
+            resetInterval();
+        });
+
+        nextBtn.addEventListener("click", () => {
+            nextSlide();
+            resetInterval();
+        });
+
+        function resetInterval() {
+            clearInterval(interval);
+            interval = setInterval(nextSlide, 4000);
+        }
+
+        interval = setInterval(nextSlide, 4000);
+
+        // --- Mobile touch/swipe support ---
+        let startX = 0;
+        let isDragging = false;
+
+        slider.addEventListener("touchstart", (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+        });
+
+        slider.addEventListener("touchmove", (e) => {
+            if (!isDragging) return;
+            const diff = startX - e.touches[0].clientX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) nextSlide();
+                else prevSlide();
+                isDragging = false;
+                resetInterval();
+            }
+        });
+
+        slider.addEventListener("touchend", () => {
+            isDragging = false;
+        });
+    });
+</script>
