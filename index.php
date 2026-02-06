@@ -12,6 +12,19 @@
             background-color: #f0f8ff;
         }
 
+        /* Align items right */
+        .navbar-end {
+            margin-left: auto;
+            font-size: 15px;
+            padding: 1px;
+            align-items: anchor-center;
+            float: inline-end;
+        }
+
+        .navbar-item {
+            white-space: nowrap;
+        }
+
         .navbar {
             background-color: #0c36a7f2;
         }
@@ -281,27 +294,30 @@
 
 <body>
 
-    <!-- Navigation -->
     <nav class="navbar is-spaced" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item logo-area" href="#">
-                <img src="public/assets/images/nisu.png" alt="Northern Iloilo State University Logo" class="logo-img">
-
-                <span class="logo-text">
-                    Northern Iloilo State University
-                </span>
+                <img src="public/assets/images/nisu.png" alt="Logo" class="logo-img">
+                <span class="logo-text">Northern Iloilo State University</span>
+            </a>
+            <!-- Hamburger for mobile -->
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </a>
         </div>
 
-
-        <div class="navbar-menu">
+        <div id="navMenu" class="navbar-menu">
             <div class="navbar-end">
                 <a class="navbar-item">Home</a>
                 <a class="navbar-item">About</a>
-                <a class="navbar-item">Admissions</a>
-                <a class="navbar-item">News</a>
-                <a class="navbar-item">Events</a>
-                <a class="navbar-item">Contact</a>
+                <a class="navbar-item">Administration</a>
+                <a class="navbar-item">Academics</a>
+                <a class="navbar-item">Research and Extension</a>
+                <a class="navbar-item">External Campuses</a>
+                <a class="navbar-item">International Collaborations</a>
+                <a class="navbar-item">Legal Affairs Office</a>
             </div>
         </div>
     </nav>
@@ -319,7 +335,7 @@
     <!-- Slider Section -->
     <section class="section fade-in">
         <div class="container">
-            <h3 class="title is-4 has-text-centered">Campus Highlights</h3>
+            <h3 class="title is-4">Campus Highlights</h3>
 
             <div class="slider-wrapper" style="position: relative; overflow: hidden;">
                 <!-- Slider -->
@@ -603,6 +619,19 @@
 
         slider.addEventListener("touchend", () => {
             isDragging = false;
+        });
+    });
+</script>
+
+<script>
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', () => {
+        const burger = document.querySelector('.navbar-burger');
+        const menu = document.getElementById(burger.dataset.target);
+
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('is-active');
+            menu.classList.toggle('is-active');
         });
     });
 </script>
