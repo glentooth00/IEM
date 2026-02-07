@@ -1,10 +1,10 @@
-
-    <!-- Footer -->
-    <footer class="footer">
-        &copy; 2026 Web App. All rights reserved.
-    </footer>
+<!-- Footer -->
+<footer class="footer">
+    &copy; 2026 Web App. All rights reserved.
+</footer>
 
 </body>
+
 </html>
 
 <!--JS SCRIPT --->
@@ -15,24 +15,24 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const burger = document.getElementById('burgerBtn');
-    const menu = document.getElementById('mobileMenu');
-    const overlay = document.getElementById('menuOverlay');
+    document.addEventListener('DOMContentLoaded', () => {
+        const burger = document.getElementById('burgerBtn');
+        const menu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('menuOverlay');
 
-    function toggleMenu() {
-      menu.classList.toggle('is-active');
-      overlay.classList.toggle('is-active');
-    }
+        function toggleMenu() {
+            menu.classList.toggle('is-active');
+            overlay.classList.toggle('is-active');
+        }
 
-    burger.addEventListener('click', toggleMenu);
-    overlay.addEventListener('click', toggleMenu);
-  });
-
-
+        burger.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+    });
 
 
-     const modal = document.getElementById('modalOverlay');
+
+
+    const modal = document.getElementById('modalOverlay');
     const openBtn = document.getElementById('openModal');
     const closeBtn = document.getElementById('closeModal');
     const cancelBtn = document.getElementById('cancelModal');
@@ -64,8 +64,3 @@
         }
     });
 </script>
-
-
-
-
-

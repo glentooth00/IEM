@@ -1,0 +1,144 @@
+/* Navbar base */
+.navbar {
+    background-color: rgb(14, 34, 184);
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-family: "Lucida Bright", serif;
+    font-size: 14px;
+}
+
+/* Navbar links */
+.navbar .navbar-menu .navbar-end a {
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+    background-color: transparent; /* ensure no default background */
+}
+
+/* Hover for simple links (no submenu) - text color only, no background */
+.navbar .navbar-menu .navbar-end > .navbar-item:not(.has-submenu):hover {
+    color: white;             /* keep text white on hover */
+    background-color: transparent; /* remove background hover */
+}
+
+/* Navbar burger for mobile */
+.navbar-burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: auto;
+    height: 40px;
+}
+
+.navbar-burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+/* Submenu wrapper */
+.has-submenu {
+    position: relative;
+}
+
+/* Submenu panel (desktop fade-from-top) */
+.submenu-panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    font-size: 14px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    padding: 12px 24px;
+    min-width: 200px;
+    max-width: 400px;
+    width: 650px;
+    box-sizing: border-box;
+    color:rgba(0, 0, 0, 0.59);
+    /* Fade from top animation */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+}
+
+/* Show submenu on hover (desktop) */
+@media screen and (min-width: 1024px) {
+    .has-submenu:hover > .submenu-panel {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .submenu-panel.grid-panel {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem 2rem;
+        min-width: 400px;
+        max-width: 900px;
+    }
+}
+
+/* Submenu links */
+.submenu-panel a {
+    display: block;
+    padding: 6px 0;
+    color: #000000b6 !important;              /* black font for submenu */
+    text-decoration: none;
+    white-space: normal;
+}
+
+/* Submenu links hover */
+.submenu-panel a:hover {
+    background-color: rgb(14, 34, 184); /* blue background */
+    color: rgb(0, 0, 0);                        /* white text on hover */
+}
+
+
+/* Mobile styles */
+@media screen and (max-width: 1023px) {
+    .navbar-burger {
+        display: flex;
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-menu.is-active {
+        display: flex;
+    }
+
+    .submenu-panel {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        display: none;
+        background-color: rgb(14, 34, 184);
+        padding-left: 1rem;
+        box-shadow: none;
+        grid-template-columns: unset;
+    }
+
+    .has-submenu.is-open > .submenu-panel {
+        display: block;
+    }
+
+    .submenu-panel a {
+        color: white;
+    }
+
+    .submenu-toggle {
+        cursor: pointer;
+    }
+}
