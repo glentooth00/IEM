@@ -108,7 +108,7 @@
         display: flex;
     }
 
-    .navbar-menu {
+    /* .navbar-menu {
         display: none;
         flex-direction: column;
         width: 100%;
@@ -116,7 +116,7 @@
 
     .navbar-menu.is-active {
         display: flex;
-    }
+    } */
 
     .submenu-panel {
         position: static;
@@ -142,3 +142,98 @@
         cursor: pointer;
     }
 }
+
+
+/* =========================
+   MOBILE NAVIGATION DRAWER
+========================= */
+
+@media screen and (max-width: 1023px) {
+
+    #fakeLogo img {
+        height: 35px;
+        width: auto;
+        margin-left: 0;
+        position:relative;
+        max-width: 0;
+    }
+
+    /* Navbar brand layout */
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Burger */
+    .navbar-burger {
+        display: flex;
+        margin-right: 15px;
+        margin-left: 0;        /* remove auto push */
+        z-index: 1001;
+    }
+
+    /* Drawer container */
+    .navbar-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;
+        height: 100vh;
+        background: rgb(14, 34, 184);
+        padding-top: 80px;
+
+        display: flex;
+        flex-direction: column;
+
+        transform: translateX(-100%);
+        transition: transform 0.4s ease;
+
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    /* Slide in */
+    .navbar-menu.is-active {
+        transform: translateX(0);
+    }
+
+    /* Stack nav items vertically */
+    .navbar-end {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-item {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    /* Submenus inside drawer */
+    .submenu-panel {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        display: none;
+        background-color: rgb(14, 34, 184);
+        box-shadow: none;
+        padding-left: 1rem;
+        width: 100%;
+    }
+
+    .has-submenu.is-open > .submenu-panel {
+        display: block;
+    }
+
+    .submenu-panel a {
+        color: white !important;
+    }
+
+    .submenu-toggle {
+        cursor: pointer;
+    }
+
+}
+
+
