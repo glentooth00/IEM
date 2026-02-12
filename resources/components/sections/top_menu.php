@@ -1,9 +1,14 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand" style="padding:10px;">
+        <!-- Burger menu for mobile -->
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
         <!-- Logo -->
         <div class="" href="#">
-            <img src="public/assets/images/nisu.png" id="fakeLogo"
-                style="height: 50px;position:relative;margin-left: 20px;">
+            <img src="public/assets/images/nisu.png" id="fakeLogo" style="height:60px;padding:5px;margin-left: 20px;">
         </div>
 
         <!-- University Name -->
@@ -11,12 +16,6 @@
             Northern Iloilo State University
         </div>
 
-        <!-- Burger menu for mobile -->
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
     </div>
 
     <div id="navbarMenu" class="navbar-menu">
