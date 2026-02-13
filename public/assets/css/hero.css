@@ -1,0 +1,8 @@
+.hero {
+    background-image: 
+        linear-gradient(rgba(89, 159, 245, 0.586), rgba(0, 80, 180, 0.5)),
+        url('https://scontent.fmnl25-6.fna.fbcdn.net/v/t39.30808-6/487990757_634158359470829_8355187586931633633_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG3nkT7tFlQWGj7UB4QZiJsq_GGyAYjG-Wr8YbIBiMb5RLk-eP05emzhEyr4Ivby_x2nRRQeQOtMd3tBMRULPsM&_nc_ohc=hdbnOfH2vPkQ7kNvwGDCLpr&_nc_oc=Adm6Sbt71iKuDDM2OooMpLxWYQ0W3L6WPqVgQKWtodWittfm3w9qCn9toC4pSvyFTFo&_nc_zt=23&_nc_ht=scontent.fmnl25-6.fna&_nc_gid=ShjT8bQmw4YiSO1KS3pODg&oh=00_Aftat30IqiUFcHH_V4s8k7ozpdkJ_y2mJqslL1gSRjM9hA&oe=6994ADC0');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+}
